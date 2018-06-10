@@ -27,3 +27,21 @@
     </div>
 </div>
 @endsection
+
+@section('scripts')
+    <script>
+        // Pedimos permiso (el navegador nos preguntará)
+        Notification.requestPermission()
+
+
+        var title = "Xitrus"
+        var extra = {
+            body: "Notificación de prueba en Xitrus"
+
+        }
+        // Lanzamos la notificación
+        new Notification( title, extra)
+
+
+    </script>
+@endsection
