@@ -21,6 +21,7 @@
                             <p class="card-text">{{ auth()->user()->email }}</p>
                         </div>
                     </div>
+                    <button onclick="sendNotif()">enviar notificacion</button>
                 </div>
             </div>
         </div>
@@ -30,12 +31,12 @@
 
 @section('scripts')
     <script>
-        Push.config({
-            serviceWorker: 'js/sw.js', // Sets a custom service worker script
-        });
-        Push.create("Hello world!", {
-            body: "How's it hangin'?",
-            timeout: 4000
-        });
+        function sendNotif(){
+            Push.create("Hello world!", {
+                body: "How's it hangin'?",
+                timeout: 4000,
+                vibrate: [200,100,200,100]
+            });
+        }
     </script>
 @endsection
