@@ -15,10 +15,10 @@
                     @endif
 
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ $user->avatar }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ auth()->user()->facebook_avatar }}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $user->name }}</h5>
-                            <p class="card-text">{{ $user->email }}</p>
+                            <h5 class="card-title">{{ auth()->user()->name }}</h5>
+                            <p class="card-text">{{ auth()->user()->email }}</p>
                         </div>
                     </div>
                 </div>
