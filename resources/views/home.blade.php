@@ -39,7 +39,11 @@
                 body: "Tienes una nueva notificacion!",
                 icon: "hospital-icon.png",
                 link: "https://www.castexapp.com/home",
-                vibrate: [200,100,200,100]
+                vibrate: [200,100,200,100,200,100],
+                onClick: function () {
+                    window.focus();
+                    this.close();
+                }
             });
         }
     </script>
