@@ -33,14 +33,19 @@
         // Pedimos permiso (el navegador nos preguntará)
         Notification.requestPermission()
 
+        function sendNotif() {
+            var title = "Xitrus"
+            var extra = {
+                body: "Notificación de prueba en Xitrus"
 
-        var title = "Xitrus"
-        var extra = {
-            body: "Notificación de prueba en Xitrus"
-
+            }
+            // Lanzamos la notificación
+            new Notification( title, extra)
         }
-        // Lanzamos la notificación
-        new Notification( title, extra)
+
+        setTimeout(function () {
+            sendNotif()
+        }, 3000);
 
 
     </script>
