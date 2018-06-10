@@ -30,23 +30,8 @@
 
 @section('scripts')
     <script>
-        navigator.serviceWorker.register('js/sw.js');
-
-        function showNotification() {
-            Notification.requestPermission(function(result) {
-                if (result === 'granted') {
-                    navigator.serviceWorker.ready.then(function(registration) {
-                        registration.showNotification('Vibration Sample', {
-                            body: 'Buzz! Buzz!',
-                            vibrate: [200, 100, 200, 100, 200, 100, 200],
-                            tag: 'vibration-sample'
-                        });
-                    });
-                }
-            });
-        }
         setTimeout(function () {
-            showNotification()
+            Push.create("Notificacion de prueba");
         }, 3000)
     </script>
 @endsection
