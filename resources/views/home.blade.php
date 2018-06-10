@@ -30,8 +30,9 @@
 
 @section('scripts')
     <script>
-        setTimeout(function () {
-            Push.create("Notificacion de prueba");
-        }, 3000)
+        Push.create("Hello world!", {
+            body: "How's it hangin'?",
+            timeout: 4000
+        });
     </script>
 @endsection
