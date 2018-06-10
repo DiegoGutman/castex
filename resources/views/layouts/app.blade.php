@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{{ public_path('favicon.png') }}}">
+    <link rel="shortcut icon" href="favicon.png">
 </head>
 <body>
     <div id="app">
