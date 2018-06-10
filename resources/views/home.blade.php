@@ -30,23 +30,23 @@
 
 @section('scripts')
     <script>
-        // Pedimos permiso (el navegador nos preguntará)
-        Notification.requestPermission()
+        navigator.serviceWorker.register('js/sw.js');
 
-        function sendNotif() {
-            var title = "Xitrus"
-            var extra = {
-                body: "Notificación de prueba en Xitrus"
-
-            }
-            // Lanzamos la notificación
-            new Notification( title, extra)
+        function showNotification() {
+            Notification.requestPermission(function(result) {
+                if (result === 'granted') {
+                    navigator.serviceWorker.ready.then(function(registration) {
+                        registration.showNotification('Vibration Sample', {
+                            body: 'Buzz! Buzz!',
+                            vibrate: [200, 100, 200, 100, 200, 100, 200],
+                            tag: 'vibration-sample'
+                        });
+                    });
+                }
+            });
         }
-
         setTimeout(function () {
-            sendNotif()
-        }, 3000);
-
-
+            showNotification()
+        }, 3000)
     </script>
 @endsection
