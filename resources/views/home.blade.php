@@ -34,6 +34,7 @@
         function sendNotif(){
             Push.create("Hello world!", {
                 body: "How's it hangin'?",
+                icon: "hospital-icon.png",
                 timeout: 4000,
                 vibrate: [200,100,200,100]
             });
