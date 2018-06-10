@@ -32,9 +32,13 @@
 @section('scripts')
     <script>
         function sendNotif(){
+            Push.config({
+                serviceWorker: "./sw.js"
+            });
             Push.create("Hello world!", {
                 body: "How's it hangin'?",
                 icon: "hospital-icon.png",
+                link: "https://www.castexapp.com/home",
                 timeout: 4000,
                 vibrate: [200,100,200,100]
             });
