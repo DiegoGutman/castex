@@ -30,6 +30,9 @@
 
 @section('scripts')
     <script>
+        Push.config({
+            serviceWorker: 'js/sw.js', // Sets a custom service worker script
+        });
         Push.create("Hello world!", {
             body: "How's it hangin'?",
             timeout: 4000
