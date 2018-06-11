@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/api/notifications', 'UsersController@notifications');
 
 Route::get('test/{id}', function($id){
-    $user = \App\User::find(1);
+    $user = \App\User::find($id);
     $user->notify(new \App\Notifications\EventNotification('nueva notificacion'));
 });
 
