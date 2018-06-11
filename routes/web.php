@@ -21,4 +21,11 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/api/notifications', 'UsersController@notifications');
+
+Route::get('test/{id}', function($id){
+    $user = \App\User::find(1);
+    $user->notify(new \App\Notifications\EventNotification('nueva notificacion'));
+});
+
 

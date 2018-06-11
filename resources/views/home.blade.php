@@ -21,7 +21,6 @@
                             <p class="card-text">{{ auth()->user()->email }}</p>
                         </div>
                     </div>
-                    <button onclick="sendNotif()">enviar notificacion</button>
                 </div>
             </div>
         </div>
@@ -30,21 +29,5 @@
 @endsection
 
 @section('scripts')
-    <script>
-        function sendNotif(){
-            Push.config({
-                serviceWorker: "./sw.js"
-            });
-            Push.create("Castex App", {
-                body: "Tienes una nueva notificacion!",
-                icon: "hospital-icon.png",
-                link: "home",
-                vibrate: [200,100,200,100,200,100],
-                onClick: function () {
-                    window.focus();
-                    this.close();
-                }
-            });
-        }
-    </script>
+
 @endsection
