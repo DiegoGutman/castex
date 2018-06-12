@@ -12,6 +12,10 @@
 */
 
 Route::get('/', function () {
+    if (auth()->user()) {
+        return redirect()->route('tasks');
+    }
+
     return view('welcome');
 });
 
@@ -19,7 +23,7 @@ Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('f
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/tasks', 'HomeController@tasks')->name('tasks');
 
 Route::get('test/{id}', function($id){
     $user = \App\User::find($id);
