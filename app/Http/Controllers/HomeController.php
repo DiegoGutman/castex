@@ -25,4 +25,8 @@ class HomeController extends Controller
     {
         return view('task');
     }
+
+    public function cx() {
+        return view('cx');
+    }
 }

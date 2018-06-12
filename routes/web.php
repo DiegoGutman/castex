@@ -24,6 +24,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/tasks', 'HomeController@tasks')->name('tasks');
+Route::get('/cx', 'HomeController@cx')->name('cx');
 
 Route::get('test/{id}', function($id){
     $user = \App\User::find($id);
