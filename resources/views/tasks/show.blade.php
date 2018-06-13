@@ -21,7 +21,7 @@
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
                 <hr>
-                <div class="fb-comments" data-href="{{ secure_url('tasks', [$task->id]) }}" data-mobile="true" data-numposts="5"></div>
+                <div class="fb-comments" data-href="{{ secure_url('tasks', [$task->id]) }}" data-width="100%" data-numposts="5"></div>
             </div>
         </div>
     </div>
