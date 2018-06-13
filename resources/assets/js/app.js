@@ -19,6 +19,7 @@ window.Push = require('push.js');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('notifications', require('./components/Notifications.vue'));
+Vue.component('tasks', require('./components/Tasks.vue'));
 
 const app = new Vue({
     el: '#app'

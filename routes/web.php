@@ -26,9 +26,23 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 Route::get('/tasks', 'HomeController@tasks')->name('tasks');
 Route::get('/cx', 'HomeController@cx')->name('cx');
 
+Route::get('tasks/{id}', 'TaskController@show');
+
 Route::get('test/{id}', function($id){
     $user = \App\User::find($id);
     $user->notify(new \App\Notifications\EventNotification('nueva notificacion'));
+});
+
+Route::get('task-create', function () {
+    \App\Task::create(
+        [
+            'user_id' => 1,
+            'name' => 'Lavar los platos',
+            'description' => 'Lavar los platos',
+            'asigned_by' => 1,
+            'success' => 0
+        ]
+    );
 });
 
 

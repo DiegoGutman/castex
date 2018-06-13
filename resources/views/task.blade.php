@@ -8,7 +8,7 @@
                     Tareas
                 </div>
                 <div class="card-body">
-
+                    <tasks :user="{{ auth()->user()->id }}"></tasks>
                 </div>
             </div>
         </div>

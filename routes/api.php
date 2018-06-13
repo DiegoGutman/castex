@@ -17,4 +17,5 @@ Route::group(['middleware'=>'auth:api', 'namespace'=>'Api\V1', 'prefix'=>'v1'], 
     Route::get('/notifications/{user}', 'UsersController@notifications');
     Route::delete('/notification/{user}/{notification}', 'UsersController@deleteNotification');
     Route::delete('/notifications/{user}', 'UsersController@deleteNotifications');
+    Route::get('tasks', 'TaskController@tasks');
 });
