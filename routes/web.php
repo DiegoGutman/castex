@@ -26,7 +26,10 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 Route::get('/tasks', 'HomeController@tasks')->name('tasks');
 Route::get('/cx', 'HomeController@cx')->name('cx');
 
-Route::get('tasks/{id}', 'TaskController@show');
+Route::group(['middleware'=>'auth'], function () {
+    Route::get('tasks/{id}', 'TaskController@show');
+});
+
 
 Route::get('test/{id}', function($id){
     $user = \App\User::find($id);
