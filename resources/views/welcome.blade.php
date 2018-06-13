@@ -67,7 +67,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="top-right links">
-                <a href="{{ route('facebook-login') }}">Acceder</a>
+                <a href="{{ route('login') }}">Acceder</a>
             </div>
             <div class="content">
                 <div class="title m-b-md">
